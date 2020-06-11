@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import HomeScreen from '../components/HomeScreen';
+import HomeScreen from '../components/listenNow/HomeScreen';
 
 const MainStack = createStackNavigator();
 
