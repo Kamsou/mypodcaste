@@ -6,15 +6,18 @@ import { NavigationContainer } from '@react-navigation/native';
 import { theme } from './theme';
 import MainStackNavigator from './src/navigators/MainStackNavigator';
 
-
+import { ApolloProvider } from '@apollo/react-hooks';
+import { client } from './src/graphql/client';
 
 class App extends Component {
   render() {
   return (
     <UtilityThemeProvider theme={theme}>
-      <NavigationContainer>
-        <MainStackNavigator />
-      </NavigationContainer>
+      <ApolloProvider client={client}>
+        <NavigationContainer>
+          <MainStackNavigator />
+        </NavigationContainer>
+      </ApolloProvider>
     </UtilityThemeProvider>
   )
   }
