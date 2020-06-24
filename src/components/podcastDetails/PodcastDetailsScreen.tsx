@@ -4,6 +4,8 @@ import { RouteProp, useRoute } from '@react-navigation/native';
 import { SearchStackRouteParamsList } from 'src/navigators/types';
 import { FlatList } from 'react-native-gesture-handler';
 import { Image, StyleSheet } from 'react-native';
+import { theme } from '../../../theme';
+import FeatherIcon from 'react-native-vector-icons/Feather'
 
 type NavigationParams = RouteProp<SearchStackRouteParamsList, 'PodcastDetails'>
 
@@ -25,8 +27,14 @@ const PodcastDetailsScreen = () => {
             <Text color="blueLight" size="xs">S'abonner</Text>
           </Box>
         </Box>
-        <Box px="sm" mb="md">
-          <Text>Lire le dernier épisode</Text>
+        <Box px="sm" mb="md" dir="row" align="center">
+          <Box mr={10}>
+            <FeatherIcon name="play" size={30} color={theme.color.blueLight} />
+          </Box>
+          <Box>
+            <Text bold>Lire</Text>
+            <Text size="sm">#39 - Le dernier épisode</Text>
+          </Box>
         </Box>
 
         <Box px="sm" mb="md">

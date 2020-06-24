@@ -8,6 +8,7 @@ import { SearchQuery, SearchQueryVariables, SearchQuery_search } from '../../typ
 import searchQuery from '../../graphql/query/searchQuery';
 import SearchEmpty from './SearchEmpty';
 import SearchTile from './SearchTile';
+import FeatherIcon from 'react-native-vector-icons/Feather'
 
 
 
@@ -29,15 +30,18 @@ const SearchScreen = () => {
   return (
       <Box f={1} bg="white">
         <Box h={50} w="100%" px="md" my="sm">
-          <TextInput 
-            style={s.input} 
-            placeholder="Rechercher Podcast.."
-            selectionColor={theme.color.blueLight}
-            onChangeText={setTerm}
-            autoCorrect={false}
-            onSubmitEditing={onSearch}
-            value={term}
-          />
+          <Box dir="row" align="center" h={40} bg="greyLightest" radius={10} px="sm">
+            <FeatherIcon name="search" size={20} color={theme.color.greyDark} />
+            <TextInput 
+              style={s.input} 
+              placeholder="Rechercher Podcast.."
+              selectionColor={theme.color.blueLight}
+              onChangeText={setTerm}
+              autoCorrect={false}
+              onSubmitEditing={onSearch}
+              value={term}
+            />
+          </Box>
         </Box>
 
         {error ? (
@@ -81,10 +85,7 @@ const SearchScreen = () => {
 
 const s = StyleSheet.create({
   input: {
-    height: 40,
     flex: 1,
-    backgroundColor: theme.color.greyLightest,
-    borderRadius: 10,
     paddingHorizontal: theme.space.sm
   },
   listContentContainer: {
